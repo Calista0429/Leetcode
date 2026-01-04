@@ -14,13 +14,13 @@ def topKFrequent(nums: List[int], k: int) -> List[int]:
         #         return res
 
         #Solution B
-        # heap = []
-        # for key,val in counter.items():
-        #     heapq.heappush(heap, [-val, key])
-        # res = []
-        # while len(res) < k:
-        #     res.append(heapq.heappop(heap)[1])
-        # return res
+        heap = []
+        for key,val in counter.items():
+            heapq.heappush(heap, [-val, key])
+        res = []
+        while len(res) < k:
+            res.append(heapq.heappop(heap)[1])
+        return res
 
         #Solution C
         freq = [[] for _ in range(len(nums) + 1)]
